@@ -390,10 +390,9 @@ class _BuildJob(Job):
 
     def run(self):
         # TODO 2020-12-09 remove this! Platypus shouldn't have to know about Poddie stuff
-        from poddie.route.centerline_profile import set_route_profiles
+        from poddie.route.route_builder import set_route_profiles
         set_route_profiles(self.solutions)
         [s.evaluate() for s in self.solutions]
-
 
 class Algorithm(object):
 
